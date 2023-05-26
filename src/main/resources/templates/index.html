@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<a  th:each="pizza : ${pizzas}" th:object="${pizza}" th:href="@{/pizza/{id}(id=${pizza.id})}" class="border border-secondary rounded py-1 px-4" 
+                style="text-decoration: none;text-decoration: none;color: black;margin: 0;cursor: pointer;">
+               <h5>[[ *{nome} ]]</h5>
+            </a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Pizza/' + ${pizza.nome}"> </title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+              <div class="container mt-5 pt-5">
+        <div class="mx-auto border border-secondary d-flex justify-content-center align-items-center" style="min-height: 65vh;width: 80%;">
+           <div class="card" style="width: 18rem;">
+  <img th:src="${pizza.foto}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" th:text="${pizza.nome}"></h5>
+    <p class="card-text" th:text="${pizza.descrizione}"></p>
+    <div class="d-flex justify-content-between">
+    <a href="#" class="btn btn-primary" th:text="${pizza.prezzo} + ' €'"></a>
+    <a th:href="@{/pizza}" class="btn btn-warning"><i class="fa-solid fa-arrow-left fa-xl" style="color: #ffffff;"></i></a>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+
+    <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -31,7 +31,6 @@ public class PizzaController {
 	public String pizzaId(Model model, @PathVariable("id") int id) {
 		Optional<Pizza> pizzaId = pizzaService.findById(id);
 		Pizza pizza = pizzaId.get();
-		System.out.println(pizza);
 		model.addAttribute("pizza", pizza);
 		return "single";
 

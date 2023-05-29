@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Pizza/' + 'create'"> </title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mt-5 pt-5">
+    <div class="mx-auto border border-secondary d-flex justify-content-center align-items-center"
+        style="min-height: 65vh;width: 80%;">
+        <form id="pizza-form" th:object="${pizza}" th:action="@{/create}" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome Pizza</label>
+                <input type="text" class="form-control" id="name" th:field="*{nome}">
+                <div id="name" class="form-text">inserisci nome della pizza</div>
+
+                <label for="description" class="form-label">Ingredienti</label>
+                <input type="text" class="form-control" id="description" th:field="*{descrizione}">
+                <div id="description" class="form-text">inserisci gli ingredienti separati da (,)</div>
+
+                <label for="img" class="form-label">Immagine</label>
+                <input type="text" class="form-control" id="img" th:field="*{foto}">
+                <div id="img" class="form-text">inserisci URL dell' immagine della pizza</div>
+
+                <label for="price" class="form-label">Prezzo</label>
+                <input type="number" class="form-control" id="price" th:field="*{prezzo}">
+                <div id="price" class="form-text">inserisci prezzo con il punto(.) per i decimali</div>
+            </div>
+            <div class="d-flex">
+             <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i>
+                Crea</button>
+            <a class="btn btn-danger ms-2" th:href="@{/}"><i class="fa-solid fa-x fa-xl" style="color: #ffffff;"></i> Annulla</a>
+            
+            </div>
+           
+        </form>
+    </div>
+</div>
+    <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

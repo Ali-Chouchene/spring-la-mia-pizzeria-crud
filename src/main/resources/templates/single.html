@@ -18,7 +18,11 @@
     <p class="card-text" th:text="${pizza.descrizione}"></p>
     <div class="d-flex justify-content-between">
     <a href="#" class="btn btn-primary" th:text="${pizza.prezzo} + ' €'"></a>
-    <a th:href="@{/}" class="btn btn-warning"><i class="fa-solid fa-arrow-left fa-xl" style="color: #ffffff;"></i></a>
+    <a th:href="@{/}" class="btn btn-success"><i class="fa-solid fa-arrow-left fa-xl" style="color: #ffffff;"></i></a>
+    <a th:href="@{/update/{id}(id=${pizza.id})}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #ffffff;"></i></a>
+    <form th:action="@{'/delete/{id}' (id=${pizza.id})}" method="Post">
+     <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash fa-xl" style="color: #ffffff;"></i></button>
+     </form>
     </div>
   </div>
 </div>

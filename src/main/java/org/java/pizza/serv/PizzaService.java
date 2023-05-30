@@ -29,4 +29,10 @@ public class PizzaService {
 	public List<Pizza> findByNome(String nome) {
 		return repo.findByNomeContaining(nome);
 	}
+
+	public void deleteById(Integer id) {
+
+		repo.deleteById(id);
+
+	}
 }
